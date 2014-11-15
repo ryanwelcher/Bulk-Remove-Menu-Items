@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         makepot: {
             target: {
                 options: {
-                	domainPath: 'languages',
+                	domainPath: 'lang',
                 	cwd : './',
                     type: 'wp-plugin',
                     exclude : ['classes/class-walker-nav-menu-edit-advanced.php']

@@ -1,0 +1,37 @@
+# Copyright (C) 2014 Ryan Welcher
+# This file is distributed under the GPL2.
+msgid ""
+msgstr ""
+"Project-Id-Version: Bulk Remove Menu Items 1.0.0\n"
+"Report-Msgid-Bugs-To: "
+"http://wordpress.org/support/plugin/bulk-remove-menu-items\n"
+"POT-Creation-Date: 2014-11-15 15:55:21+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
+
+#: bulk-remove-menu-items.php:70
+msgid "Remove Menu Items"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Bulk Remove Menu Items"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Select and remove many items at once from the built in WordPress menu "
+"system."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Ryan Welcher"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.ryanwelcher.com"
+msgstr ""

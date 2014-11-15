@@ -6,6 +6,8 @@
  * Version: 1.0.0
  * Author: Ryan Welcher
  * Author URI: http://www.ryanwelcher.com
+ * Test Domain: brmi
+ * Domain Path : /lang
  * License: GPL2
  *
  * Copyright 2014  Ryan Welcher  (email : me@ryanwelcher.com)
@@ -46,12 +48,10 @@ class RW_Bulk_Remove_Menu_Items {
 	/**
 	 * Filter the Walker class that will be used on nav-menus.php admin page
 	 * @param  string $walker_class The name of the Walker class to be used
-	 * @return string               The name of the Walker class to be used
+	 * @return string               The name of the Custom Walker class to be used
 	 */
 	public function filter_wp_edit_nav_menu_walker( $walker_class ) {
-		//look in nav-menu.php for this class
-		$new_walker = 'Walker_Nav_Menu_Edit_Advanced';
-		return $new_walker; //$name_of_walker_class
+		return 'Walker_Nav_Menu_Edit_Advanced';
 	}
 
 
@@ -67,7 +67,7 @@ class RW_Bulk_Remove_Menu_Items {
 		if('nav-menus.php' == $hook) {
 			$path = ( defined( 'SCRIPT_DEBUG') && SCRIPT_DEBUG ) ? plugin_dir_url( __FILE__ ) . '/js/brmi-admin.js' : plugin_dir_url( __FILE__ ) . '/js/brmi-admin.min.js';
 			wp_enqueue_script( 'awpm_admin_scripts', $path );
-			wp_localize_script( 'awpm_admin_scripts', 'BRMI_TEXTS', array( 'button_text' => __('Remove Menu Items','awpm') ) );
+			wp_localize_script( 'awpm_admin_scripts', 'BRMI_TEXTS', array( 'button_text' => __('Remove Menu Items','brmi') ) );
 		}
 	}
 }
