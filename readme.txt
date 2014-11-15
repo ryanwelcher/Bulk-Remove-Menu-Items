@@ -1,6 +1,6 @@
 === Bulk Remove Menu Items ===
 Contributors: welcher
-Donate link: http://example.com/
+Donate link: http://www.ryanwelcher.com/donate/
 Tags: admin, menus
 Requires at least: 3.0
 Tested up to: 4.0
