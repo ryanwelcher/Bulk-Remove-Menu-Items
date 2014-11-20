@@ -26,7 +26,7 @@
 */
 
 //stop directly accessing this file
-defined('ABSPATH') or die("No script kiddies please!");
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 /**
  * main class
@@ -40,8 +40,8 @@ class RW_Bulk_Remove_Menu_Items {
 	 * @return void
 	 */
 	public function init() {
-		add_filter('wp_edit_nav_menu_walker', array($this, 'filter_wp_edit_nav_menu_walker') );
-		add_action('admin_enqueue_scripts', array( $this, 'action_admin_enqueue_scripts') );
+		add_filter( 'wp_edit_nav_menu_walker', array( $this, 'filter_wp_edit_nav_menu_walker' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'action_admin_enqueue_scripts' ) );
 	}
 
 
@@ -64,10 +64,10 @@ class RW_Bulk_Remove_Menu_Items {
 	 * @return void
 	 */
 	public function action_admin_enqueue_scripts( $hook ) {
-		if('nav-menus.php' == $hook) {
-			$path = ( defined( 'SCRIPT_DEBUG') && SCRIPT_DEBUG ) ? plugin_dir_url( __FILE__ ) . '/js/brmi-admin.js' : plugin_dir_url( __FILE__ ) . '/js/brmi-admin.min.js';
-			wp_enqueue_script( 'awpm_admin_scripts', $path );
-			wp_localize_script( 'awpm_admin_scripts', 'BRMI_TEXTS', array( 'button_text' => __('Remove Menu Items','brmi') ) );
+		if ( 'nav-menus.php' == $hook ) {
+			$path = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? plugin_dir_url( __FILE__ ) . '/js/brmi-admin.js' : plugin_dir_url( __FILE__ ) . '/js/brmi-admin.min.js';
+			wp_enqueue_script( 'brmi_admin_scripts', $path );
+			wp_localize_script( 'brmi_admin_scripts', 'BRMI_TEXTS', array( 'button_text' => __( 'Remove Menu Items', 'brmi' ) ) );
 		}
 	}
 }
