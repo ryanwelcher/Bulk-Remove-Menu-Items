@@ -15,12 +15,6 @@ var RW_BRMI;
 
 			this.generateButtonMarkup();
 			this.addInteractivity();
-
-			////save the old methods we're over-ridding
-			//this.function_holder.addMenuItemToBottom = wpNavMenu.addMenuItemToBottom;
-			//
-			////replace current functionality with custom
-			//wpNavMenu.addMenuItemToBottom = this.bmriAddMenuToBottom;
 		},
 
 		/**
@@ -76,30 +70,19 @@ var RW_BRMI;
 				$('.remove-checked-items').prop('disabled', true);
 			});
 
+
+			/**
+			 * Responding to the core event
+			 */
 			$( document ).on('nav-menu-item-added-to-bottom', function( event, new_item ) {
 
-				checked_li = $('#menu-to-edit').find('.awpm-check:checked').parents('li');
+				var menu = $( document.getElementById( 'menu-to-edit' )),
+					checked_li = menu.find('.awpm-check:checked').parents('li');
 
 				if( checked_li.length > 0 ) {
-					//new_item.removeClass( 'menu-item-depth-0' ).addClass( 'menu-item-depth-1' );
-					$('#menu-to-edit').find('.awpm-check:checked').parents('li').after( new_item.clone() );
-					new_item.after( $('#menu-to-edit li:last-child') ).remove();
+					menu.find( '.awpm-check:checked' ).parents('li').after( new_item.clone() );
+					new_item.after( $( '#menu-to-edit li:last-child' ) ).remove();
 				}
-
-
-
-
-				//$('#menu-to-edit').find('.awpm-check:checked').parents('li').after(new_item.remove() );
-
-				//$checked_li = $('#menu-to-edit').find('.awpm-check:checked').parents('li');
-				//
-				//console.log( $checked_li  );
-				//
-				////new_item.remove();
-				//
-				//new_item.insertAfter( $('#menu-to-edit').find('.awpm-check:checked').parents('li') );
-				//new_item.remove();
-				//console.log ( 'did you just add a menu item?', new_item );
 			});
 		},
 
@@ -114,19 +97,6 @@ var RW_BRMI;
 			}else{
 				button.prop('disabled', true);
 			}
-		},
-
-		/**
-		 * Overrides the built in addMenuToBottom method
-		 */
-		bmriAddMenuToBottom : function ( menuMarkup ) {
-
-			console.log( wpNavMenu.targetList.find('.awpm-check:checked').parents('li') );
-
-			//$(menuMarkup).hideAdvancedMenuItemFields().appendTo( wpNavMenu.targetList.find('.awpm-check:checked').parents('#menu-to-edit') );
-			$(menuMarkup).hideAdvancedMenuItemFields().insertAfter( wpNavMenu.targetList.find('.awpm-check:checked').parents('li') );
-			wpNavMenu.refreshKeyboardAccessibility();
-			wpNavMenu.refreshAdvancedAccessibility();
 		}
 	};
 
