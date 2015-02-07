@@ -34,17 +34,10 @@ I don't NOT think you're lazy.
 
 Nothing, I love you. Please download my plugin :)
 
-= Why does it only select children of top level level items? =
+= Why does it only select children of top level items? =
 
 That's a feature and certainly not a bug that will be addressed in upcoming versions of the plugin.
 
-== Screenshots ==
-
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets 
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png` 
-(or jpg, jpeg, gif).
-2. This is the second screen shot
 
 == Changelog ==
 
