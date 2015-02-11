@@ -4,10 +4,6 @@ var RW_BRMI;
 
 	RW_BRMI = {
 
-		function_holder : {
-
-		},
-
 		/**
 		 * Init
 		 */
