@@ -31,9 +31,9 @@ var RW_BRMI;
 			});
 
 			button = $('<input/>',{
-				'class' : 'button button-primary remove-checked-items',
+				'class' : 'button button remove-checked-items',
 				'value' : BRMI_TEXTS.button_text,
-				'style'	: 'margin-right:10px;',
+				'style'	: 'margin-right:5px;padding:0 0 0 20px;',
 				'disabled' : 'disabled'
 			});
 			div.append( button  );
