@@ -13,7 +13,7 @@ var RW_BRMI;
 			this.addInteractivity();
 
 			//save the old methods we're over-ridding
-			this.function_holder.addMenuItemToBottom = wpNavMenu.addMenuItemToBottom;
+			this.function_holder = wpNavMenu.addMenuItemToBottom;
 
 			//replace current functionality with custom
 			wpNavMenu.addMenuItemToBottom = this.bmriAddMenuToBottom;
