@@ -4,6 +4,7 @@ var RW_BRMI;
 
 	RW_BRMI = {
 
+		function_holder : null,
 		/**
 		 * Init
 		 */
@@ -40,26 +41,11 @@ var RW_BRMI;
 			$('.major-publishing-actions').append( div );
 		},
 
-		/**
-		 * Recursively checks child items for checked menu item
-		 * @todo Currently only works on top level items
-		 */
-		
+
 		addInteractivity : function() {
 			var that = this;
 
 			$('#menu-to-edit').on('change','.awpm-check', function(){
-				var parent_li = $(this).parents('li'),
-				classes = parent_li.attr('class').split(" ");
-				if( $.inArray( 'menu-item-depth-0', classes ) !== -1 ) {
-					$.each( parent_li.nextAll(), function( index, element ){
-						if( $(element).hasClass( 'menu-item-depth-0' ) ) {
-							return false;
-						}else{
-							$(element).find('.awpm-check').prop('checked', true);
-						}
-					});
-				}
 				that.setButtonStatus();
 			});
 
