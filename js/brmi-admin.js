@@ -70,13 +70,13 @@ var RW_BRMI;
 			/**
 			 * Responding to the core event
 			 */
-			$( document ).on('nav-menu-item-added-to-bottom', function( event, new_item ) {
+			$( document ).on( 'menu-item-added', function( event, new_item ) {
 
 				var menu = $( document.getElementById( 'menu-to-edit' )),
-					checked_li = menu.find('.awpm-check:checked').parents('li');
+					checked_li = menu.find('.awpm-check:checked').parents( 'li' );
 
 				if( checked_li.length > 0 ) {
-					menu.find( '.awpm-check:checked' ).parents('li').after( new_item.clone() );
+					menu.find( '.awpm-check:checked' ).parents( 'li' ).after( new_item.clone() );
 					new_item.after( $( '#menu-to-edit li:last-child' ) ).remove();
 				}
 			});
