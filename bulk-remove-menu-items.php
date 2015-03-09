@@ -42,6 +42,7 @@ class RW_Bulk_Remove_Menu_Items {
 	public function init() {
 		add_filter( 'wp_edit_nav_menu_walker', array( $this, 'filter_wp_edit_nav_menu_walker' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'action_admin_enqueue_scripts' ) );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'action_customizer_enqueue_scripts' ) );
 	}
 
 
@@ -59,16 +60,22 @@ class RW_Bulk_Remove_Menu_Items {
 	 * Loads our scripts ony on the nav-menus.php page
 	 *
 	 * Looks for SCRIPT_DEBUG to allow for proper debugging if needed.
-	 * 
 	 * @param  string $hook The name of the admin page file
 	 * @return void
 	 */
 	public function action_admin_enqueue_scripts( $hook ) {
-		if ( 'nav-menus.php' == $hook ) {
+		if ( 'nav-menus.php' == $hook  ) {
 			$path = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? plugin_dir_url( __FILE__ ) . '/js/brmi-admin.js' : plugin_dir_url( __FILE__ ) . '/js/brmi-admin.min.js';
 			wp_enqueue_script( 'brmi_admin_scripts', $path );
 			wp_localize_script( 'brmi_admin_scripts', 'BRMI_TEXTS', array( 'button_text' => __( 'Remove Menu Items', 'brmi' ) ) );
 		}
+	}
+
+
+	public function action_customizer_enqueue_scripts() {
+		$path = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? plugin_dir_url( __FILE__ ) . '/js/brmi-admin.js' : plugin_dir_url( __FILE__ ) . '/js/brmi-admin.min.js';
+		wp_enqueue_script( 'brmi_admin_scripts', $path );
+		wp_localize_script( 'brmi_admin_scripts', 'BRMI_TEXTS', array( 'button_text' => __( 'Remove Menu Items', 'brmi' ) ) );
 	}
 }
 
