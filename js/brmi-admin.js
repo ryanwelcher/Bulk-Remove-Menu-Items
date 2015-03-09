@@ -4,6 +4,7 @@ var RW_BRMI;
 
 	RW_BRMI = {
 
+		function_holder : null,
 		/**
 		 * Init
 		 */
@@ -13,7 +14,7 @@ var RW_BRMI;
 			this.addInteractivity();
 
 			//save the old methods we're over-ridding
-			this.function_holder.addMenuItemToBottom = wpNavMenu.addMenuItemToBottom;
+			this.function_holder = wpNavMenu.addMenuItemToBottom;
 
 			//replace current functionality with custom
 			wpNavMenu.addMenuItemToBottom = this.bmriAddMenuToBottom;
@@ -30,9 +31,9 @@ var RW_BRMI;
 			});
 
 			button = $('<input/>',{
-				'class' : 'button button-primary remove-checked-items',
+				'class' : 'button button remove-checked-items',
 				'value' : BRMI_TEXTS.button_text,
-				'style'	: 'margin-right:10px;',
+				'style'	: 'margin-right:5px;padding:0 0 0 20px;',
 				'disabled' : 'disabled'
 			});
 			div.append( button  );
@@ -40,26 +41,11 @@ var RW_BRMI;
 			$('.major-publishing-actions').append( div );
 		},
 
-		/**
-		 * Recursively checks child items for checked menu item
-		 * @todo Currently only works on top level items
-		 */
-		
+
 		addInteractivity : function() {
 			var that = this;
 
 			$('#menu-to-edit').on('change','.awpm-check', function(){
-				var parent_li = $(this).parents('li'),
-				classes = parent_li.attr('class').split(" ");
-				if( $.inArray( 'menu-item-depth-0', classes ) !== -1 ) {
-					$.each( parent_li.nextAll(), function( index, element ){
-						if( $(element).hasClass( 'menu-item-depth-0' ) ) {
-							return false;
-						}else{
-							$(element).find('.awpm-check').prop('checked', true);
-						}
-					});
-				}
 				that.setButtonStatus();
 			});
 
