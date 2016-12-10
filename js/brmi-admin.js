@@ -71,7 +71,7 @@ var RW_BRMI;
 			 * Responding to the core event
 			 */
 			$( document ).on( 'menu-item-added', function( event, new_item ) {
-
+				new_item = $( new_item );
 				var menu = $( document.getElementById( 'menu-to-edit' )),
 					checked_li = menu.find('.awpm-check:checked').parents( 'li' );
 
