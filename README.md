@@ -12,7 +12,7 @@ Great for managing large menus or even for quickly clearing out a menu during de
 
 Install this plugin as described in the[Codex](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins)
 
-##Frequently Asked Questions
+## Frequently Asked Questions
 
 ### Why did you make this plugin?
 
@@ -31,7 +31,7 @@ Nothing, I love you. Please download my plugin :)
 That's a feature and certainly not a bug that will be addressed in upcoming versions of the plugin.
 
 
-##Changelog
+## Changelog
 
 #### 1.0.0
 * Initial Release
