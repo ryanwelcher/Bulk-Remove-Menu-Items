@@ -12,12 +12,6 @@ var RW_BRMI;
 
 			this.generateButtonMarkup();
 			this.addInteractivity();
-
-			//save the old methods we're over-ridding
-			this.function_holder = wpNavMenu.addMenuItemToBottom;
-
-			//replace current functionality with custom
-			wpNavMenu.addMenuItemToBottom = this.bmriAddMenuToBottom;
 		},
 
 		/**
@@ -58,6 +52,20 @@ var RW_BRMI;
 				$('.remove-checked-items').prop('disabled', true);
 			});
 
+
+			/**
+			 * Responding to the core event
+			 */
+			$( document ).on( 'menu-item-added', function( event, new_item ) {
+				new_item = $( new_item );
+				var menu = $( document.getElementById( 'menu-to-edit' )),
+					checked_li = menu.find('.awpm-check:checked').parents( 'li' );
+
+				if( checked_li.length > 0 ) {
+					menu.find( '.awpm-check:checked' ).parents( 'li' ).after( new_item.clone() );
+					new_item.after( $( '#menu-to-edit li:last-child' ) ).remove();
+				}
+			});
 		},
 
 		/**
@@ -71,16 +79,6 @@ var RW_BRMI;
 			}else{
 				button.prop('disabled', true);
 			}
-		},
-
-		/**
-		 * Overrides the built in addMenuToBottom method
-		 */
-		bmriAddMenuToBottom : function ( menuMarkup ) {
-
-			$(menuMarkup).hideAdvancedMenuItemFields().insertAfter( wpNavMenu.targetList.find( '.awpm-check:checked' ).parents( 'li' ) );
-			wpNavMenu.refreshKeyboardAccessibility();
-			wpNavMenu.refreshAdvancedAccessibility();
 		}
 	};
 
