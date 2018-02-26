@@ -10,7 +10,7 @@ Great for managing large menus or even for quickly clearing out a menu during de
 
 ## Installation
 
-Install this plugin as described in the[Codex](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins)
+Install this plugin as described in the [Codex](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins)
 
 ## Frequently Asked Questions
 
