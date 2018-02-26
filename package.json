@@ -8,7 +8,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "http://repo-url.com"
+		"url": "https://github.com/ryanwelcher/Bulk-Remove-Menu-Items"
 	},
 	"author": "Ryan Welcher",
 	"license": "GPL2",
